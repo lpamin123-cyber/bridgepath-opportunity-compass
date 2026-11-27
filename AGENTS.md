@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application architecture
+- Keep shared role, profile, opportunities, saved items, and tracker state in the BridgePath workspace provider; persist validated state in browser localStorage after hydration because this app is an immediately usable, login-free evaluation workspace.
+- Use separate TanStack leaf routes for the four workspace views and keep the shared navigation and dialogs in the root shell so state survives navigation.
+- Keep sample data and pure filtering/application/status functions in the typed model module so business rules can be tested independently of UI.
